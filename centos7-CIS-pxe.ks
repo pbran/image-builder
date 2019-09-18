@@ -11,9 +11,7 @@ reboot
 bootloader --location=mbr --append=" crashkernel=auto"
 zerombr
 clearpart --all --initlabel
-part pv.01 --size=1 --grow
-volgroup vg_root pv.01
-logvol / --fstype ext4 --name=root --vgname=vg_root --size=1 --grow
+part / --fstype=ext4 --size=1 --grow
 
 rootpw --iscrypted $6$xdibz7Yuy5KEMGxM$lRR0EiXiUsyONA41RteN1yuklA9qcIN4XVU.K2bDisVRES9bZUqbIP3dXxFLkgwGYzYyV2rfUTkhspiRtJVXl/
 
