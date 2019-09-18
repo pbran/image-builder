@@ -22,7 +22,7 @@ url --url="http://mirror.cwcs.co.uk/centos/7/os/x86_64/"
 repo --name=base    --baseurl="http://mirror.cwcs.co.uk/centos/7/os/x86_64/"
 repo --name=epel    --baseurl="http://anorien.csc.warwick.ac.uk/mirrors/epel/7/x86_64/"
 repo --name=extras  --baseurl="http://anorien.csc.warwick.ac.uk/mirrors/extras/7/x86_64/"
-repo --name=updates --baseutl="http://anorien.csc.warwick.ac.uk/mirrors/updates/7/x86_64/"
+repo --name=updates --baseurl="http://anorien.csc.warwick.ac.uk/mirrors/updates/7/x86_64/"
 repo --name=docker  --baseurl="https://download.docker.com/linux/centos/7/x86_64/stable"  --includepkgs=docker-ce,docker-ce-cli,containerd.io
 
 
