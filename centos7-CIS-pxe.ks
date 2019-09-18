@@ -11,7 +11,7 @@ reboot
 bootloader --location=mbr --append=" crashkernel=auto"
 zerombr
 clearpart --all --initlabel
-part / --fstype=ext4 --size=1 --grow
+part / --fstype=ext4 --size=8192
 
 rootpw --iscrypted $6$xdibz7Yuy5KEMGxM$lRR0EiXiUsyONA41RteN1yuklA9qcIN4XVU.K2bDisVRES9bZUqbIP3dXxFLkgwGYzYyV2rfUTkhspiRtJVXl/
 
@@ -21,6 +21,8 @@ user --name=centos --gecos="centos user" --uid=1000 --gid=1000 --groups=wheel,do
 url --url="http://mirror.cwcs.co.uk/centos/7/os/x86_64/"
 repo --name=base    --baseurl="http://mirror.cwcs.co.uk/centos/7/os/x86_64/"
 repo --name=epel    --baseurl="http://anorien.csc.warwick.ac.uk/mirrors/epel/7/x86_64/"
+repo --name=extras  --baseurl="http://anorien.csc.warwick.ac.uk/mirrors/extras/7/x86_64/"
+repo --name=updates --baseutl="http://anorien.csc.warwick.ac.uk/mirrors/updates/7/x86_64/"
 repo --name=docker  --baseurl="https://download.docker.com/linux/centos/7/x86_64/stable"  --includepkgs=docker-ce,docker-ce-cli,containerd.io
 
 
