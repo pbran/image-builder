@@ -66,7 +66,6 @@ grub2-efi
 grub2-pc-modules
 memtest86+
 syslinux
-python-docker-py
 %end
 
 %post --log=/root/postinstall.log
