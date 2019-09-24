@@ -426,4 +426,7 @@ chown centos:centos /home/centos/.ssh/authorized_keys
 chmod 600 /home/centos/.ssh/authorized_keys
 chmod 700 /home/centos/.ssh
 
+# tag and creation date
+echo Demo v 0.2 $(date +%v) > /etc/demo-release
+
 %end
