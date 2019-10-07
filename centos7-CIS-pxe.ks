@@ -405,12 +405,6 @@ usermod -G wheel root
 # Just adding a /root/bin dir may be better
 sed -i 's/^PATH.*$/PATH=\$PATH/' /root/.bash_profile
 
-
-# Install AIDE     						# CIS 1.3.1 and 1.3.2
-echo "0 5 * * * /usr/sbin/aide --check" >> /var/spool/cron/root
-#Initialise last so it doesn't pick up changes made by the post-install of the KS
-/usr/sbin/aide --init -B 'database_out=file:/var/lib/aide/aide.db.gz'
-
 # local config allow wheel group and centos user to sudo
 echo -e "%wheel\t\tALL=(ALL)\tALL"|EDITOR='tee -a' visudo
 echo -e "centos\t\tALL=(ALL)\tNOPASSWD: ALL"|EDITOR='tee -a' visudo
@@ -428,5 +422,10 @@ chmod 700 /home/centos/.ssh
 
 # tag and creation date
 echo Demo v 0.2 $(date +%v) > /etc/demo-release
+
+# Install AIDE     						# CIS 1.3.1 and 1.3.2
+echo "0 5 * * * /usr/sbin/aide --check" >> /var/spool/cron/root
+#Initialise last so it doesn't pick up changes made by the post-install of the KS
+/usr/sbin/aide --init -B 'database_out=file:/var/lib/aide/aide.db.gz'
 
 %end
