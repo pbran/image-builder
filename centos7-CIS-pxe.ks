@@ -421,7 +421,7 @@ chmod 600 /home/centos/.ssh/authorized_keys
 chmod 700 /home/centos/.ssh
 
 # tag and creation date
-echo "Demo v 0.2 $(/bin/date \"+%v\")"  > /etc/demo-release
+echo "Demo v 0.2 $(/bin/date +%F)"  > /etc/demo-release
 
 # Install AIDE     						# CIS 1.3.1 and 1.3.2
 echo "0 5 * * * /usr/sbin/aide --check" >> /var/spool/cron/root
